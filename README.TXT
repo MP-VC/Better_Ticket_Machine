@@ -29,3 +29,19 @@ Added in code
 57.
 Added in code
 
+58.
+The question document does not show me what to use
+
+59.
+It would not show what you got refunded, rather it would show 0
+
+60.
+It gives a unreachable statement error.
+Nothing executes after a return 
+
+61.
+There is an int before price
+This created a variable that only executed inside the methode
+It does not modify the field
+
+62.

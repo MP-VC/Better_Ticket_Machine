@@ -121,11 +121,22 @@ public class TicketMachine
     {
         if(budget<price)
         {
-            System.out.println("u broke");
+            System.out.println("u broke, only have " + balance + " while u need " + price );
         }
         else
         {
             System.out.println("u have money ^q^");
         }
+    }
+    
+    /**
+     * Empties machine.
+     */
+    public int emptyMachine()
+    {
+        int priortotal;
+        priortotal = total;
+        total = 0;
+        return priortotal;
     }
 }
