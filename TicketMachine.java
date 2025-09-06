@@ -116,4 +116,16 @@ public class TicketMachine
     {
         mean = total / count;
     }
+    
+    public void affordable(int budget)
+    {
+        if(budget<price)
+        {
+            System.out.println("u broke");
+        }
+        else
+        {
+            System.out.println("u have money ^q^");
+        }
+    }
 }
