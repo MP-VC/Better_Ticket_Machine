@@ -45,3 +45,12 @@ This created a variable that only executed inside the methode
 It does not modify the field
 
 62.
+Added in code
+
+63.
+Added in code
+
+64.
+It would need a new boolean to see if the discount option is enabled.
+A new method would be needed to activate the discount
+printticket would need to be modified to accept the discount

@@ -21,6 +21,8 @@ public class TicketMachine
     private int saving;
     // The mean amount
     private int mean;
+    // The discount state
+    private boolean discounted;
 
     /**
      * Create a machine that issues tickets of the given price.
@@ -69,12 +71,33 @@ public class TicketMachine
      */
     public void printTicket()
     {
-        if(balance >= price) {
+        int amountLeftToPay = price - balance;
+        if(amountLeftToPay <= 0 && discounted) {
             // Simulate the printing of a ticket.
             System.out.println("##################");
             System.out.println("# The BlueJ Line");
             System.out.println("# Ticket");
-            System.out.println("# " + price + " cents.");
+            System.out.println("# " + price/2 + " cents.");
+            System.out.println("##################");
+            System.out.println();
+
+            // Update the total collected with the price.
+            total = total + (price/2);
+            // Reduce the balance by the price.
+            balance = balance - (price/2);
+            discounted = false;
+        }
+        else if(discounted)
+        {
+            System.out.printf("You must insert at least %d more cents.%n",
+                              (price - balance)/2);
+        } 
+        else if(amountLeftToPay <= 0) {
+            // Simulate the printing of a ticket.
+            System.out.println("##################");
+            System.out.println("# The BlueJ Line");
+            System.out.println("# Ticket");
+            System.out.println("# " + price/2 + " cents.");
             System.out.println("##################");
             System.out.println();
 
@@ -82,11 +105,17 @@ public class TicketMachine
             total = total + price;
             // Reduce the balance by the price.
             balance = balance - price;
+            discounted = false;
         }
-        else {
+        else if(discounted) {
+            System.out.printf("You must insert at least %d more cents.%n",
+                              (price - balance)/2);
+        }
+        else
+        {
             System.out.printf("You must insert at least %d more cents.%n",
                               price - balance);
-        }
+        } 
     }
 
     /**
@@ -138,5 +167,13 @@ public class TicketMachine
         priortotal = total;
         total = 0;
         return priortotal;
+    }
+    
+    /**
+     * Apply a discount
+     */
+    public void enableDiscounted()
+    {
+        discounted = true;
     }
 }
