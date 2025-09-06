@@ -1,15 +1,27 @@
-Project: better-ticket-machine
-Authors: David Barnes and Michael Kölling
+47.
+I belive it will not change
+It did not change
 
-This project is part of the material for the book
+48.
+I belive it would allow entering 0
+When changed, it allows 0
 
-   Objects First with Java - A Practical Introduction using BlueJ
-   Seventh edition
-   David J. Barnes and Michael Kölling
-   Pearson Education
+49.
+Modified code
 
-It is discussed in chapter 2.
+50.
+It was for the visibility
+It is well suited since it only has 2 states and boolean also has 2 states
 
-Purpose of project: To illustrate conditional statements.
-How to start this project: Create one or more TicketMachine objects.
+52.
+Nothing happens
 
+53.
+It could not be a negative.
+Balance will alwas be a positive interget when money is inserted and it alwas has to be >= to the price
+
+55.
+Added in code
+
+56.
+Added in code

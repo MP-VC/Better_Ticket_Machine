@@ -17,6 +17,10 @@ public class TicketMachine
     private int balance;
     // The total amount of money collected by this machine.
     private int total;
+    // The saving amount
+    private int saving;
+    // The mean amount
+    private int mean;
 
     /**
      * Create a machine that issues tickets of the given price.
@@ -50,11 +54,11 @@ public class TicketMachine
      */
     public void insertMoney(int amount)
     {
-        if(amount > 0) {
-            balance = balance + amount;
+        if(amount <= 0) {
+            System.out.println("Use a positive amount rather than: " + amount);
         }
         else {
-            System.out.println("Use a positive amount rather than: " + amount);
+            balance = balance + amount;
         }
     }
 
@@ -95,5 +99,21 @@ public class TicketMachine
         amountToRefund = balance;
         balance = 0;
         return amountToRefund;
+    }
+    
+    /**
+     * Store the saving amount
+     */
+    public void discountsaving(int discount)
+    {
+        saving = price * discount;
+    }
+    
+    /**
+     * Store the saving amount
+     */
+    public void dividemean(int count)
+    {
+        mean = total / count;
     }
 }
